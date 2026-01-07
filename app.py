@@ -1,9 +1,14 @@
+from groq import Groq
+import streamlit as st
+
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+
 import streamlit as st
 from chatbot import chatbot_response
 
 st.set_page_config(page_title="Organ Donation AI Assistant")
 
-st.title("🫀 Organ Donation AI Assistant")
+st.title("Organ Donation AI Assistant")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
